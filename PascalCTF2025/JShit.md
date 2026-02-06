@@ -1,8 +1,8 @@
-#JShit
+# JShit
 
->I hate Javascript sooo much, maybe I'll write a website in PHP next time🔥!
+> I hate Javascript sooo much, maybe I'll write a website in PHP next time🔥!
 
-##Background
+## Background
 This challenge was extremely simple. We are given a static webpage with no functionality and there is no source code attached to the challenge.
 Viewing the source of the website, we get:
 ```
@@ -22,7 +22,7 @@ Viewing the source of the website, we get:
     </body>
 </html>
 ```
-##Solve
+## Solve
 Taking a look at the source code, we can clearly see that the content within the script tag is obfuscated using something that looks like JSFuck.
 Utilizing an online decoder tool [dcode.fr](https://www.dcode.fr/jsfuck-language),we obtain:
 ```
