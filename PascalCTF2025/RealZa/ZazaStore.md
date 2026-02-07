@@ -3,4 +3,6 @@
 
 ## Background
 Upon entering the challenge, we are given a default login page.
-<img src="images/Login.jpg" width="400">
+<p align="left">
+  <img src="images/Login.jpg" width="400">
+</p>
