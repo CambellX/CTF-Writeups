@@ -3,4 +3,4 @@
 
 ## Background
 Upon entering the challenge, we are given a default login page.
-![login](images/Login.jpg)
+<img src="images/Login.jpg" width="400">
