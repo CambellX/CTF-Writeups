@@ -1,4 +1,4 @@
-Pretty fun CTF. Most of the challenges were super easy. 
+Pretty fun in-person CTF. Most of the challenges were super easy. 
 <body align="left">
   <img src = "images/leaderboard.jpg">
 </body>
