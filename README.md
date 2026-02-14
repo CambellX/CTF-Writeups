@@ -1,3 +1,3 @@
 # CTF-Writeups
 
-Lowk i never post writeups, but here are some
+Lowkey, I never have enough time to complete writeups. Here are some when I have spare time.
