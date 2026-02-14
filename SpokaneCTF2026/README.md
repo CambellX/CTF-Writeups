@@ -8,4 +8,4 @@ I ended up doing all of the web and most of the misc challenges. The web challen
 I was surprised by how fun the LLM challenges were and am considering having that as one of my secondary topics.
 
 Also, these writeups aren't going to be very intuitive because the challenge infrastructure was taken down the day of the competition ending and I
-wasn't able to get any screenshots.
+wasn't able to get any screenshots. I just think that the different methods of AI prompt injections are super interesting.
