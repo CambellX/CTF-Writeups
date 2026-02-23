@@ -1,10 +1,10 @@
-<img width="1358" height="342" alt="image" src="https://github.com/user-attachments/assets/146f2a4f-a4f2-4c1a-a4cc-3023005182d5" /># MyFirstBlog
+# web/[EASY] My First Blog
 > I've been getting into this personal blog thing. It's been really fun but apparently you're not supposed to post certain info on the interwebs. Flag is at /flag.txt
 
 ## Background
 Opening this challenge, its a pretty default blog website with a few selections.
 <body align="left"> 
-  <img src = blog.png>
+  <img src = images/blog.png>
 </body>
 
 Digging through the client-side HTML, I didn't notice anything particularly strange. This is the homepage for reference:
@@ -79,7 +79,7 @@ Its pretty telling that we are missing blog 3.
 ## Solve
 After visiting /blog/2 and then switching the blog identifier to 3, we find a secret page.
 <body align="left">
-  <img src = "blog3.png" width=400>
+  <img src = "images/blog3.png" width=400>
 </body>
 
 Looking through the page source, we find 
@@ -118,7 +118,7 @@ Looking through the page source, we find
 ```
 This API key is also shown in our network log when accessing the page.
 <body align="left">
-  <img src = "HTTPRequest.png" width=400>
+  <img src = "images/HTTPRequest.png" width=400>
 </body>
 
 Now what can this API key be used for?
@@ -130,22 +130,22 @@ Well looking that the client-side code, we see
 
 Opening up the resume link, the server returns just that resume image. 
 <body align="left">
-  <img src = "resume.png" width=400>
+  <img src = "images/resume.png" width=400>
 </body>
 
 Removing the apiKey parameter, we are met with 404 error and an empty image.
 <body align="left">
-  <img src = "resume404.png" width=400>
+  <img src = "images/resume404.png" width=400>
 </body>
 
 Switching the parameter to /flag.txt we are met with a 403 Forbidden. This means that we don't have the privileges to access that resource.
 <body align="left">
-  <img src = "flag403.png" width=400>
+  <img src = "images/flag403.png" width=400>
 </body>
 
 But we have the API key from earlier. After appending the API key parameter to the end of our request, we get the flag.
 <body align="left">
-  <img src = "flag.png" width=400>
+  <img src = "images/flag.png" width=400>
 </body>
 
 
