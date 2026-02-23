@@ -129,6 +129,10 @@ Reading the backend code, it seems like we have 4 users inserted: bob, jo, ani, 
 
 To view the flag, all we have to do is log in as any user.
 
+Taking a look at the challenge, we are met with a simple blog-like website with login functionality. Our goal is to somehow bypass that login screen.
+
+## Solve
+
 While the token_hex(3) is definitely brute-forcable, the challenge explicitly states that we cannot do so. Thus we will have to look for 
 alternate ways to get into an account.
 
