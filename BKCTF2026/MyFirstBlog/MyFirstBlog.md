@@ -1,5 +1,7 @@
 # web/[EASY] My First Blog
 > I've been getting into this personal blog thing. It's been really fun but apparently you're not supposed to post certain info on the interwebs. Flag is at /flag.txt
+>
+> No Source
 
 ## Background
 Opening this challenge, its a pretty default blog website with a few selections.
