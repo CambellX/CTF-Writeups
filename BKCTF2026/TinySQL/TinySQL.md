@@ -138,7 +138,7 @@ alternate ways to get into an account.
 
 A simple way to perform an SQLi is to just login as a user, then comment the rest of the line out (E.x: admin'--)
 
-What we can do here is the same principle. We can log in using the user "bob" by simply inserting:
+What we can do here is the same principle, just with different syntax. We can log in using the user "bob" by simply inserting:
 
 username: "bob#"
 
