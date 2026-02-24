@@ -5,19 +5,19 @@
 Opening up the challenge, we are given a small UI in which a player is fighting a dragon. 
 
 <body align="left">
-  <img src = "BeALegendHome.jpg" width=400>
+  <img src = "images/BeALegendHome.jpg" width=400>
 </body>
 
 We are given the option to view our stats, fight, save, load, and reset.
 
 <body align="left">
-  <img src = "options.jpg" width=400>
+  <img src = "images/options.jpg" width=400>
 </body>
 
 When attempting to attack the dragon, we immediately lose all of our health and die. Damn.
 
 <body align="lefT">
-  <img src = "attack.jpg" width=400>
+  <img src = "images/attack.jpg" width=400>
 </body>
 
 Taking a look at the source code for the attacking functionality, we are given:
@@ -95,14 +95,14 @@ Thus, the bug had to exist somewhere server-side.
 Reading the attack logic of the code, the 300ms of downtime between us attacking the dragon and the dragon attacking us looks really weird. I didn't actually see this first, I played around with the client-side game to find this out. But after the player attacks the dragon and then immediately saves within the next 300 ms, the dragon's health would decrease by 10 whilst the user would remain at full health. Essentially saving right before we die.
 
 <body align="left"> 
-  <img src = "vuln.jpg" width=400>
+  <img src = "images/vuln.jpg" width=400>
 </body>
 
 All thats left to do is somehow automate this process. 
 
 Taking a look at the network logs after sending a request, it looks like all attacks are sent from the clientside directly to the server. Thus we would have to frame our solve in the client-side console.
 <body align="lefT">
-  <img src = "network.jpg" width=400>
+  <img src = "images/network.jpg" width=400>
 </body>
 
 Taking a look at the client-side source, we have some functions that send our attacks directly to the server. Namely the sendCommand() function.
@@ -171,5 +171,5 @@ cycle();
 ```
 After running the script, we get the flag. Also I ran this locally because the infrastructure is down at the time of writing this.
 <body align="lefT">
-  <img src = "flag.jpg" width=400>
+  <img src = "images/flag.jpg" width=400>
 </body>
