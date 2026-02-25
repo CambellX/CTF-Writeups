@@ -84,5 +84,36 @@ def sanitize(xml_content):
         return False
     return True
 ```
-Blacklists a few terms and ensures everything is in
+Blacklists a few terms and ensures there are no comments. Blacklists never actually end up working so I immediately knew this was where our bypass would probably be.
+
+Also, the code explicitly allows all entities to be defined.
+```
+parser = etree.XMLParser(encoding='utf-8', no_network=False, resolve_entities=True, recover=True)
+```
+Its pretty evident that this will be some sort of XXE.
+
+Also after reading the dockerfile, the flag is saved in /app/flag.txt. Thus, we need to obtain some sort of file read.
+```
+FROM python:3.13
+
+ARG FLAG
+
+WORKDIR /app
+
+COPY requirements.txt .
+RUN apt-get update && apt-get install -y libxml2-dev libxslt-dev gcc zlib1g-dev
+RUN pip install --no-cache-dir --no-binary lxml -r requirements.txt
+
+COPY . .
+RUN echo "$FLAG" > /app/flag.txt
+RUN chmod 400 /app/flag.txt
+
+RUN mkdir -p uploads && chmod 777 uploads
+
+RUN useradd -m -u 1000 appuser && chown -R appuser:appuser /app
+USER appuser
+```
+Goal: Get through poorly made blacklist and obtain LFI.
+## Obtaining The Flag
+Given the blacklist, we can't immediately exploit XXE and obtain the flag as it is blacklisted.
 
