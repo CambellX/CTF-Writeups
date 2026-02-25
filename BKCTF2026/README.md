@@ -6,3 +6,5 @@ We got first in the University of Washington division which was pretty nice.
 <body align="left">
   <img src = "leaderboard.png" width=400>
 </body>
+
+The web was pretty unique and fun. The last web had the simplest solution but was insanely guessy (I hate sourceless clientside)
