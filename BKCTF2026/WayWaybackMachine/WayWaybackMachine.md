@@ -3,15 +3,15 @@
 
 ## Background
 We are given a simple Wayback website with functionality to create snapshots of a website.
-<body align="left">
-  <img src = "WaybackHome.jpg" width=400>
-</body>
+<p align="left">
+  <img src = "images/WayBackHome.jpg" width=400>
+</p>
 
 Upon entering a website name, the site immediately sets out to generate a snapshot of that site.
 
-<body align="left">
-  <img src = "usage.jpg" width=400>
-</body>
+<p align="left">
+  <img src = "images/usage.jpg" width=400>
+</p>
 
 ## Analyzing source code
 Lets take a look at the snapshot functionality to see how a site takes a snapshot.
@@ -321,19 +321,18 @@ The process is going to look somewhat like this.
 Thus, I opened up a new page of requestrepo (the goat, idk why webhook has been inconsistently going down for the last few months)
 
 I then created a simple html page which links a script.
-<body align="left">
-  <img src = "/images/setup1.jpg" width=400>
-</body>
-
+<p align="left">
+  <img src = "images/setup1.jpg" width=400>
+</p>
 The linked script has a malicious JS payload which sends the flag to my requestrepo.
-<body align="left">
-  <img src = "/images/setup2.jpg" width=400>
-</body>
+<p align="left">
+  <img src = "images/setup2.jpg" width=400>
+</p>
 
 After sending the payload to the system, I got the flag:
-<body align="left">
-  <img src = "/images/flag.jpg" width=400>
-</body>
+<p align="left">
+  <img src = "images/flag.jpg" width=400>
+</p>
 
 
 ## References
