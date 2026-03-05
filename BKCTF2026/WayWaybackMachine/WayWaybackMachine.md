@@ -316,6 +316,25 @@ The process is going to look somewhat like this.
 1. Host an attacker controlled server accessible over the internet.
 2. On that server, create dynamically loaded modules containing malicious code.
 3. Supply the URL of that server to our snapshot machine.
-4. Obtain RCE after the machine automatically downloads those files locally. 
+4. Obtain RCE after the machine automatically downloads those files locally.
+
+Thus, I opened up a new page of requestrepo (the goat, idk why webhook has been inconsistently going down for the last few months)
+
+I then created a simple html page which links a script.
+<body align="left">
+  <img src = "/images/setup1.jpg" width=400>
+</body>
+
+The linked script has a malicious JS payload which sends the flag to my requestrepo.
+<body align="left">
+  <img src = "/images/setup2.jpg" width=400>
+</body>
+
+After sending the payload to the system, I got the flag:
+<body align="left">
+  <img src = "/images/flag.jpg" width=400>
+</body>
+
+
 ## References
 https://medium.com/@mtorre4580/understanding-require-function-node-js-bbda09952ded
