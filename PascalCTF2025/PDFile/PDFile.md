@@ -116,4 +116,14 @@ USER appuser
 Goal: Get through poorly made blacklist and obtain LFI.
 ## Obtaining The Flag
 Given the blacklist, we can't immediately exploit XXE and obtain the flag as it is blacklisted.
+However, its pretty well known that blacklists are generally not that effective.
 
+Tossing this into Burp to give me a little cleaner of a view on the input, I immediately attempted to exfiltrate /etc/passwd
+<p align="left">
+  <img src = "images/exfiltrate1.jpg" width=400>
+</p>
+
+After messing around with the payload, I found that I could just URL encode the blocked characters to bypass the blacklist.
+<p align="left">
+  <img src = "images/exfiltrate2.jpg" width=400>
+</p>
