@@ -4,11 +4,12 @@
 ## Background
 The challenge presents as a generic casino which allows gambling of currency called "Microcoins"
 <p align="left"> 
-  <img src = "images/homepage1.jpg">
+  <img src = "images/homepage1.jpg" width=400>
 </p>
 There is a Currency Exchange functionality and a Black Market functionality to obtain the flag. Thus, I immediately thought that the most likely solve is to 
 somehow obtain enough USD to purchase the flag. But how?
-  <img src = "images/homepage2.jpg">
+<p align="left">
+  <img src = "images/homepage2.jpg" width=400>
 </p>
 
 Looking at the starting Microcoins balance of 10, it's pretty clear that its (almost) impossible to obtain the flag purely from gambling off our default money. 
@@ -111,15 +112,33 @@ This will result in parseInt(0.00000005) convert into 5...
 The full chain looks like this:
 
 Input: 0.00000005
-> 1. 0.00000005
-> Javascript automatically converts to exponential notation
-> 5e^-7
-> parseInt(5e^-7)
-> parseInt only parses up to valid integer values, so anything after the 5 is dropped
-> 5
+```
+1. 0.00000005
+Javascript automatically converts to exponential notation
+2. 5e^-7
+3. parseInt(5e^-7)
+parseInt only parses up to valid integer values, so anything after the 5 is dropped
+4. 5
 Return value: 5
-
+```
 # Obtaining the flag
+Utilizing this exploit, I aimed to convert our balance to 5e^-7. To do this, I gambled away all of the excess cash.
+<p align="left">
+  <img src = "images/payload.jpg" width=400>
+</p>
+
+The result is exactly as I was hoping for. Javascript automatically converted the balance to 5e^-7.
+<p align="left">
+  <img src = "images/payload2.jpg" width=400>
+</p>
+
+Knowing that the convert API uses the parseInt function, I attempted to convert 5 coins into USD. 
+
+<p align="left">
+  <img src = "images/payload3.jpg" width=400>
+</p>
+Now that my gambling funds have increased by 5 million, I immediately sought to gamble it all away. At this point, I only needed to hit 3 wins in a row before having enough funds to purchase the flag. 
+
 ## References
 https://dmitripavlutin.com/parseint-mystery-javascript/
 https://coderwall.com/p/4eaixa/parseint-can-be-dangerous
