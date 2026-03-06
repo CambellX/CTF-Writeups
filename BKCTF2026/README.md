@@ -8,3 +8,5 @@ We got first in the University of Washington division which was pretty nice.
 </body>
 
 The web was pretty unique and fun. The last web had the simplest solution but was insanely guessy (I hate sourceless clientside)
+
+Currently working on the writeups for TinySQL2 and NoXSS
