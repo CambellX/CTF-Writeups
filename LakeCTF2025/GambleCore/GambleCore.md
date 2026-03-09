@@ -95,9 +95,13 @@ app.post('/api/convert', (req, res) => {
 This doesn't immediately look vulnerable, but I did hear about some weird functionality with parsing values in certain languages. After researching a bit online, it seems i was correct. The following are some examples that I found from my research:
 
 parseInt("0x1A") -> 26 (octal notation)
+
 parseInt("abc123") -> NaN
+
 parseInt("123abc") -> 123 (non-integer dropped)
+
 parseInt(123.99) -> 123 (decimal dropped)
+
 
 I did attempt to gamble hoping for some sort of rounding error to obtain infinite coins, but none of these succeeded. 
 
@@ -139,6 +143,7 @@ Knowing that the convert API uses the parseInt function, I attempted to convert 
 </p>
 Now that my gambling funds have increased by 5 million, I immediately sought to gamble it all away. At this point, I only needed to hit 3 wins in a row before having enough funds to purchase the flag. 
 
+Solve script coming soon
 ## References
 https://dmitripavlutin.com/parseint-mystery-javascript/
 https://coderwall.com/p/4eaixa/parseint-can-be-dangerous
