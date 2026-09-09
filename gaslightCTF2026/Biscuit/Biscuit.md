@@ -30,7 +30,7 @@ def current_admin() -> str | None:
 To get the flag, i needed to somehow obtain a user with the role of admin.
 
 
-## Building the exploit
+## Building the solve
 
 When signing up as a user, the app uses a mint() function to create a new user which uses an unfamiliar 
 BiscuitBuilder function from a library called biscuit-auth.
