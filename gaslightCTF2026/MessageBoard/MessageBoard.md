@@ -10,7 +10,7 @@ The challenge presents a simple signup/login screen. After signing in, a Message
 There are also some features to sort the board via a few different options, along with adding some close-friends.
 
 <body align="left">
-  <img src = "images/sortByExpiry.jpg" width=400>
+  <img src = "images/SortingByExpiry.jpg" width=400>
 </body>
 
 Searching for where the flag would be located in the source code, I saw that the flag is directly added to a key called "closeFriends" in the
