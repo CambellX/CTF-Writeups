@@ -82,10 +82,13 @@ This line:
 ```
 looks like a pretty obvious injection vulnerability, as it seems like the username is directly added into the BiscuitBuilder.
 Fuzzing some random inputs such as:
+
 <body align="left">
   <img src = "images/error.png" width=400>
 </body>
+
 resulted in an Internal Server Error with the following description:
+
 ```
 biscuit_auth.DataLogError: error generating Datalog: datalog parsing error: ParseErrors { errors: [ParseError { input: "fact(\"abc\")\")", message: None }] }
         [2026-09-08 23:40:08,977] ERROR in app: Exception on /signup [POST]
@@ -110,6 +113,7 @@ Traceback (most recent call last):
               ^^^^^^^^^^^^^^^
 biscuit_auth.DataLogError: error generating Datalog: datalog parsing error: ParseErrors { errors: [ParseError { input: "user(\"abc\"\")", message: None }] }
 ```
+
 Finding the library online (https://python.biscuitsec.org/), theres a section stating:
 ```
 BiscuitBuilder(), BlockBuilder() and Authorizer() accept whole datalog snippets, with statements separated by semicolons
