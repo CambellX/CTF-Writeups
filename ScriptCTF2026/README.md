@@ -1,1 +1,1 @@
-Only one web challenge this year
+Only one web challenge was made for this ctf
